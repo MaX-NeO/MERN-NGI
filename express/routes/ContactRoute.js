@@ -50,7 +50,7 @@ router.delete('/delete/:id', async (req, res) => {
         if (!existingcontact) {
             res.status(404).json({ message: "Contact not found" })
         }
-        await Products.findByIdAndDelete(id)
+        await Contacts.findByIdAndDelete(id)
         return res.status(200).json({ message: "Contact Deleted" })
     } catch (error) {
         return res.status(500).json({ message: error.message })
