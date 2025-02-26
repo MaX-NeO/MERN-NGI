@@ -81,3 +81,13 @@ th{
     font-weight: bold;
     color: orange;
 }
+.delete-btn{
+    padding: 1rem;
+    border: none;
+    outline: none;
+    background-color: rgb(196, 50, 2);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}

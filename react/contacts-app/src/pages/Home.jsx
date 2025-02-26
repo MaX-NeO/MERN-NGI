@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { addContact, getContacts } from '../api/api'
+import { addContact, deleteContact, getContacts } from '../api/api'
 
 const Home = () => {
   const [contacts, setContacts] = useState([])
@@ -19,11 +19,22 @@ const Home = () => {
     try {
       const newcontact = {
         name: nameRef.current.value,
-        phone: phoneRef.current.vale
+        phone: phoneRef.current.value
       }
       const response = await addContact(newcontact)
       console.log(response.status)
       if (response.status === 200) {
+        fetchContacts()
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const deleteContacts = async (id) => {
+    try {
+      const response = await deleteContact(id)
+      if (response.status === 200) {
+        console.log('deleted')
         fetchContacts()
       }
     } catch (error) {
@@ -63,6 +74,11 @@ const Home = () => {
                         </td>
                         <td>
                           {contact.phone}
+                        </td>
+                        <td>
+                          <button className="delete-btn" onClick={() => deleteContacts(contact._id)}>
+                            Delete
+                          </button>
                         </td>
                       </tr>
                     ))
