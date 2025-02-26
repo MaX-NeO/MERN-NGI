@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="https://nasccbe.ac.in/wp-content/uploads/2024/12/logo-2.png" alt="logo" class="logo">
+        </div>
+        <!-- ul>li*3 -->
+        <ul class="nav-links">
+            <a href="./index.html">
+                <li class="nav-items">Home</li>
+            </a>
+            <a href="./register.html">
+                <li class="nav-items">Register</li>
+            </a>
+            <li class="nav-items">Contact </li>
+        </ul>
+    </div>
+    <div class="form-container">
+        <form onsubmit="register(event)" class="auth-form">
+            <input type="text" id="name" placeholder="Name" class="input-field">
+            <input type="number" id="phone" placeholder="Phone" class="input-field">
+            <input type="email" id="email" class="input-field" placeholder="Email">
+            <input type="password" id="password" class="input-field " placeholder="Password">
+            <input type="submit" value="Submit" class="input-btn">
+        </form>
+    </div>
+    <button onclick="hi()">Hi</button>
+    <button onclick="hello()">Hello</button>
+</body>
+<script>
+    function hi() {
+        alert("Hi")
+    }
+
+    function hello() {
+        alert("Hello")
+    }
+</script>
+<script src="script.js"></script>
+
+</html>
